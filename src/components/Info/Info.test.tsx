@@ -2,12 +2,11 @@ import { render, screen } from "@testing-library/react";
 import Info from "./Info";
 
 describe("Given an Info component", () => {
-  describe("When it receives a `calling`", () => {
-    test("Then it should show 'calling'", () => {
-      const callingText = "calling";
-      const expectedText = callingText;
+  describe("When its renderized", () => {
+    test("Then it should show 'Calling...' text", () => {
+      const expectedText = "Calling...";
 
-      render(<Info infoText={callingText} />);
+      render(<Info isCalling={true} display={[]} />);
 
       const text = screen.getByText(expectedText);
 
