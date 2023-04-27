@@ -2,15 +2,12 @@ import { render, screen } from "@testing-library/react";
 import Info from "./Info";
 
 describe("Given an Info component", () => {
-  describe("When its renderized", () => {
-    test("Then it should show 'Calling...' text", () => {
+  describe("When its rendered", () => {
+    test("Then it should show 'Calling...' text on it", () => {
       const expectedText = "Calling...";
+      render(<Info />);
 
-      render(<Info isCalling={true} display={[]} />);
-
-      const text = screen.getByText(expectedText);
-
-      expect(text).toBeInTheDocument();
+      expect(screen.getByText(expectedText)).toBeInTheDocument();
     });
   });
 });
